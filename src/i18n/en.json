@@ -1,0 +1,33 @@
+{
+    "default_suggestion": "Use a few words, avoid common phrases",
+    "suggestion_too_weak": "Add another word or two. Uncommon words are better.",
+
+    "warning_straight_rows": "Straight rows of keys are easy to guess",
+
+    "warning_short_pattern": "Straight rows of keys are easy to guess",
+    "suggestion_short_pattern": "Use a longer keyboard pattern with more turns",
+
+    "warning_repeat": "Repeats like \"aaa\" are easy to guess",
+    "warning_repeat_multichar": "Repeats like \"abcabcabc\" are only slightly harder to guess than \"abc\"",
+    "suggestion_repeat": "Avoid repeated words and characters",
+
+    "warning_sequence": "Sequences like abc or 6543 are easy to guess",
+    "suggestion_sequence": "Avoid sequences",
+
+    "warning_recent_year": "Recent years are easy to guess",
+    "suggestion_recent_year": "Avoid recent years or years that are associated with you",
+
+    "warning_date": "Dates are often easy to guess",
+    "suggestion_date": "Avoid dates and years that are associated with you",
+
+    "warning_top_10_common_password": "This is a top-10 common password",
+    "warning_top_100_common_password": "This is a top-100 common password",
+    "warning_common_password": "This is a very common password",
+    "warning_common_password_similar": "This is similar to a commonly used password",
+    "warning_word": "A word by itself is easy to guess",
+
+    "suggestion_uppercase": "Capitalization doesn't help very much",
+    "suggestion_all_uppercase": "All-uppercase is almost as easy to guess as all-lowercase",
+    "suggestion_reverse_word": "Reversed words aren't much harder to guess",
+    "suggestion_predictable_substitution": "Predictable substitutions like '@' instead of 'a' don't help very much"
+}

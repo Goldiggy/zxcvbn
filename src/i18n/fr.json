@@ -1,0 +1,33 @@
+{
+  "default_suggestion": "Utilisez plusieurs mots, évitez les phrases courantes",
+  "suggestion_too_weak": "Ajoutez un mot ou deux, de préférence des mots peu communs",
+
+  "warning_straight_rows": "Les séries de lettres consécutives sur le clavier sont faciles à deviner",
+
+  "warning_short_pattern": "Les courts motifs basés sur le clavier sont faciles à deviner",
+  "suggestion_short_pattern": "Utilisez motif basé sur le clavier plus complexe",
+
+  "warning_repeat": "Les répétitions du type « aaa » sont faciles à deviner",
+  "warning_repeat_multichar": "Les répétitions du type « abcabcabc » sont presque aussi faciles à deviner que « abc »",
+  "suggestion_repeat": "Évitez les répétitions de mots ou de caractères",
+
+  "warning_sequence": "Les suites de caractères comme « abc » ou « 6543 » sont faciles à deviner",
+  "suggestion_sequence": "Évitez les suites de caractères",
+
+  "warning_recent_year": "Les années récentes sont faciles à deviner",
+  "suggestion_recent_year": "Évitez les années récentes ou en rapport avec vous",
+
+  "warning_date": "Les dates sont souvent faciles à deviner",
+  "suggestion_date": "Évitez les dates et années en rapport avec vous",
+
+  "warning_top_10_common_password": "Il s’agit d’un des 10 mots de passe les plus courants",
+  "warning_top_100_common_password": "Il s’agit d’un des 100 mots de passe les plus courants",
+  "warning_common_password": "Il s’agit d’un mot de passe très courant",
+  "warning_common_password_similar": "Ceci est similaire à un mot de passe fréquemment utilisé",
+  "warning_word": "Un mot seul est facile à deviner",
+
+  "suggestion_uppercase": "Ajouter des majuscules au début des mots n’aide pas beaucoup",
+  "suggestion_all_uppercase": "Un mot tout en majuscules est presque aussi facile à deviner qu’en minuscules",
+  "suggestion_reverse_word": "Mettre un mot à l’envers ne le rend pas beaucoup plus difficile à deviner",
+  "suggestion_predictable_substitution": "Les substitutions prévisibles comme « @ » au lieu de « a » ne sont pas vraiment efficaces"
+}
