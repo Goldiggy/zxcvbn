@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "frequency_lists.js",
+  "sourceRoot": "..",
+  "sources": [
+    "src/frequency_lists.coffee"
+  ],
+  "names": [],
+  "mappings": ";AACA,IAAA;;AAAA,eAAA,GACE;EAAA,eAAA,EAAiB,qtyPAAqtyP,CAAC,KAAttyP,CAA4tyP,GAA5tyP,CAAjB;EACA,cAAA,EAAgB,yvuOAAyvuO,CAAC,KAA1vuO,CAAgwuO,GAAhwuO,CADhB;EAEA,SAAA,EAAW,ywyOAAywyO,CAAC,KAA1wyO,CAAgxyO,GAAhxyO,CAFX;;;AAGF,MAAM,CAAC,OAAP,GAAiB"
+}
