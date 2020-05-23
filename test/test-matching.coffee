@@ -183,7 +183,7 @@ test 'dictionary matching', (t) ->
   msg = "default dictionaries"
   check_matches msg, t, matches, 'dictionary', patterns, ijs,
     matched_word: patterns
-    rank: [322]
+    rank: [420]
     dictionary_name: ['us_tv_and_film']
 
   matching.set_user_input_dictionary ['foo', 'bar']
