@@ -87,9 +87,6 @@ feedback =
           'warning_common_password'
       else if match.guesses_log10 <= 4
         'warning_common_password_similar'
-    else if match.dictionary_name == 'world_wikipedia'
-      if is_sole_match
-        'warning_word'
     else
       ''
 

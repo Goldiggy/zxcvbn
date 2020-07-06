@@ -1,6 +1,6 @@
 {
   "name": "zxcvbn-i18n",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "realistic password strength estimation",
   "author": "Dan Wheeler",
   "license": "MIT",
