@@ -114,88 +114,6 @@ test 'matching utils', (t) ->
   t.deepEqual matching.sorted([m1, m2, m3, m4, m5, m6]), [m4, m6, m5, m3, m1, m2], msg
   t.end()
 
-
-test 'dictionary matching', (t) ->
-  dm = (pw) -> matching.dictionary_match pw, test_dicts
-  test_dicts =
-    d1:
-      motherboard: 1
-      mother: 2
-      board: 3
-      abcd: 4
-      cdef: 5
-    d2:
-      'z': 1
-      '8': 2
-      '99': 3
-      '$': 4
-      'asdf1234&*': 5
-
-  matches = dm 'motherboard'
-  patterns = ['mother', 'motherboard', 'board']
-  msg = "matches words that contain other words"
-  check_matches msg, t, matches, 'dictionary', patterns, [[0,5], [0,10], [6,10]],
-    matched_word: ['mother', 'motherboard', 'board']
-    rank: [2, 1, 3]
-    dictionary_name: ['d1', 'd1', 'd1']
-
-  matches = dm 'abcdef'
-  patterns = ['abcd', 'cdef']
-  msg = "matches multiple words when they overlap"
-  check_matches msg, t, matches, 'dictionary', patterns, [[0,3], [2,5]],
-    matched_word: ['abcd', 'cdef']
-    rank: [4, 5]
-    dictionary_name: ['d1', 'd1']
-
-  matches = dm 'BoaRdZ'
-  patterns = ['BoaRd', 'Z']
-  msg = "ignores uppercasing"
-  check_matches msg, t, matches, 'dictionary', patterns, [[0,4], [5,5]],
-    matched_word: ['board', 'z']
-    rank: [3, 1]
-    dictionary_name: ['d1', 'd2']
-
-  prefixes = ['q', '%%']
-  suffixes = ['%', 'qq']
-  word = 'asdf1234&*'
-  for [password, i, j] in genpws word, prefixes, suffixes
-    matches = dm password
-    msg = "identifies words surrounded by non-words"
-    check_matches msg, t, matches, 'dictionary', [word], [[i,j]],
-      matched_word: [word]
-      rank: [5]
-      dictionary_name: ['d2']
-
-  for name, dict of test_dicts
-    for word, rank of dict
-      continue if word is 'motherboard' # skip words that contain others
-      matches = dm word
-      msg = "matches against all words in provided dictionaries"
-      check_matches msg, t, matches, 'dictionary', [word], [[0, word.length - 1]],
-        matched_word: [word]
-        rank: [rank]
-        dictionary_name: [name]
-
-  # test the default dictionaries
-  matches = matching.dictionary_match 'wow'
-  patterns = ['wow']
-  ijs = [[0,2]]
-  msg = "default dictionaries"
-  check_matches msg, t, matches, 'dictionary', patterns, ijs,
-    matched_word: patterns
-    rank: [420]
-    dictionary_name: ['us_tv_and_film']
-
-  matching.set_user_input_dictionary ['foo', 'bar']
-  matches = matching.dictionary_match 'foobar'
-  matches = matches.filter (match) ->
-    match.dictionary_name == 'user_inputs'
-  msg = "matches with provided user input dictionary"
-  check_matches msg, t, matches, 'dictionary', ['foo', 'bar'], [[0, 2], [3, 5]],
-    matched_word: ['foo', 'bar']
-    rank: [1, 2]
-  t.end()
-
 test 'reverse dictionary matching', (t) ->
   test_dicts =
     d1:
@@ -532,22 +450,4 @@ test 'date matching', (t) ->
     year: [1991]
     month: [12]
     day: [20]
-  t.end()
-
-
-test 'omnimatch', (t) ->
-  t.deepEquals matching.omnimatch(''), [], "doesn't match ''"
-  password = 'r0sebudmaelstrom11/20/91aaaa'
-  matches = matching.omnimatch password
-  for [pattern_name, [i, j]] in [
-    [ 'dictionary',  [0, 6] ]
-    [ 'dictionary',  [7, 15] ]
-    [ 'date',        [16, 23] ]
-    [ 'repeat',      [24, 27] ]
-    ]
-    included = false
-    for match in matches
-      included = true if match.i == i and match.j == j and match.pattern == pattern_name
-    msg = "for #{password}, matches a #{pattern_name} pattern at [#{i}, #{j}]"
-    t.ok included, msg
   t.end()

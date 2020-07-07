@@ -6,5 +6,5 @@
     "src/frequency_lists.coffee"
   ],
   "names": [],
-  "mappings": ";AACA,IAAA;;AAAA,eAAA,GACE;EAAA,SAAA,EAAW,upBAAupB,CAAC,KAAxpB,CAA8pB,GAA9pB,CAAX;;;AACF,MAAM,CAAC,OAAP,GAAiB"
+  "mappings": ";AACA,IAAA;;AAAA,eAAA,GACE;EAAA,SAAA,EAAW,mqBAAmqB,CAAC,KAApqB,CAA0qB,GAA1qB,CAAX;;;AACF,MAAM,CAAC,OAAP,GAAiB"
 }
